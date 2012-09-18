@@ -13,7 +13,7 @@
           <div class="row">
             <div class="span8">
               <h3>Select A Flight</h3>
-              <section id="tabs">
+              <section id="tabs" data-content="amazing content" data-original-title="Title to Click">
                 <ul class="nav nav-tabs">
                   <li><a href="#2012-09-27" data-flights="6">Sep 27</a></li>
                   <li><a href="#2012-09-28" data-flights="5">Sep 28</a></li>
@@ -55,11 +55,26 @@
       function changeTab(e) {
         e.preventDefault();
         $("#tabs li.active").removeClass("active");
-        $(this).addClass("active");
+        $(this).parent().addClass("active");
       };
 
-      $("#tabs li").click(changeTab);
-      $("#tabs li:eq(2)").click();
+      function showNumberOfFlights(e) {
+        var num_flights = $(this).data("flights");
+        $(this).tooltip({'placement':'top', 'title':num_flights + ' flights', 'trigger':'hover'});
+        $(this).tooltip('show');
+      };
+
+      function hideNumberOfFlights(e) {
+        $('#tabs span.tooltip').remove();
+      };
+
+      $("#tabs li a").bind({
+        click: changeTab,
+        mouseenter: showNumberOfFlights,
+        mouseleave: hideNumberOfFlights
+      });
+
+      $("#tabs li:eq(2) a").click();
     });
   </script>
 </html>
