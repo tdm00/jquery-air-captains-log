@@ -1,0 +1,43 @@
+<html>
+  <head>
+    <title>jQuery Air</title>
+    <link rel="stylesheet" type="text/css" href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="http://twitter.github.com/bootstrap/assets/css/bootstrap-responsive.css">
+  </head>
+  <body>
+    <h1>jQuery Air</h1>
+    <section id="tabs">
+      <ul class="nav nav-tabs">
+        <li><a href="#2012-09-27" data-flights="6">Sep 27</a></li>
+        <li class="active"><a href="#2012-09-28" data-flights="5">Sep 28</a></li>
+        <li><a href="#2012-09-29" data-flights="5">Sep 29</a></li>
+        <li><a href="#2012-09-30" data-flights="3">Sep 30</a></li>
+        <li><a href="#2012-10-01" data-flights="3">Oct 1</a></li>
+      </ul>
+    </section>
+  </body>
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+  <script type="text/javascript" src="http://twitter.github.com/bootstrap/assets/js/bootstrap-transition.js"></script>
+  <script type="text/javascript" src="http://twitter.github.com/bootstrap/assets/js/bootstrap-alert.js"></script>
+  <script type="text/javascript" src="http://twitter.github.com/bootstrap/assets/js/bootstrap-modal.js"></script>
+  <script type="text/javascript" src="http://twitter.github.com/bootstrap/assets/js/bootstrap-dropdown.js"></script>
+  <script type="text/javascript" src="http://twitter.github.com/bootstrap/assets/js/bootstrap-scrollspy.js"></script>
+  <script type="text/javascript" src="http://twitter.github.com/bootstrap/assets/js/bootstrap-tab.js"></script>
+  <script type="text/javascript" src="http://twitter.github.com/bootstrap/assets/js/bootstrap-tooltip.js"></script>
+  <script type="text/javascript" src="http://twitter.github.com/bootstrap/assets/js/bootstrap-popover.js"></script>
+  <script type="text/javascript" src="http://twitter.github.com/bootstrap/assets/js/bootstrap-button.js"></script>
+  <script type="text/javascript" src="http://twitter.github.com/bootstrap/assets/js/bootstrap-collapse.js"></script>
+  <script type="text/javascript" src="http://twitter.github.com/bootstrap/assets/js/bootstrap-carousel.js"></script>
+  <script type="text/javascript" src="http://twitter.github.com/bootstrap/assets/js/bootstrap-typeahead.js"></script>
+  <script type="text/javascript" src="http://twitter.github.com/bootstrap/assets/js/bootstrap-affix.js"></script>
+  <script type="text/javascript" src="http://twitter.github.com/bootstrap/assets/js/application.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $("#tabs li").click(function(e){
+        e.preventDefault();
+        $("#tabs li.active").removeClass("active");
+        $(this).addClass("active");
+      });
+    });
+  </script>
+</html>
