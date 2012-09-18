@@ -61,8 +61,11 @@
         e.preventDefault();
         $("#tabs li.active").removeClass("active");
         $(this).parent().addClass("active");
+        showFlights($(this).attr("href"));
+      };
+
+      function showFlights(activeDiv) {        
         $("#tabs div").hide();
-        var activeDiv = $(this).attr("href");
         $(activeDiv).show();
       };
 
