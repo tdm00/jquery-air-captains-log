@@ -33,11 +33,14 @@
   <script type="text/javascript" src="http://twitter.github.com/bootstrap/assets/js/application.js"></script>
   <script type="text/javascript">
     $(document).ready(function() {
-      $("#tabs li").click(function(e){
+
+      function changeTab(e) {
         e.preventDefault();
         $("#tabs li.active").removeClass("active");
         $(this).addClass("active");
-      });
+      };
+
+      $("#tabs li").click(changeTab);
     });
   </script>
 </html>
